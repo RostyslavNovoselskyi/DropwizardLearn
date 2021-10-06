@@ -3,6 +3,10 @@ package testProj;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import testProj.health.TemplateHealthCheck;
+import testProj.resources.HelloUserResource;
+
+import java.util.UUID;
 
 public class testProjApplication extends Application<testProjConfiguration> {
 
@@ -12,7 +16,7 @@ public class testProjApplication extends Application<testProjConfiguration> {
 
     @Override
     public String getName() {
-        return "testProj";
+        return "Hello-World";
     }
 
     @Override
@@ -23,7 +27,17 @@ public class testProjApplication extends Application<testProjConfiguration> {
     @Override
     public void run(final testProjConfiguration configuration,
                     final Environment environment) {
-        // TODO: implement application
+        final HelloUserResource resource = new HelloUserResource(
+                configuration.getUserId(),
+                configuration.getDefaultName()
+        );
+        final TemplateHealthCheck healthCheck =
+                new TemplateHealthCheck(
+                        configuration.getUserId(),
+                        configuration.getDefaultName()
+                );
+        environment.healthChecks().register("template", healthCheck);
+        environment.jersey().register(resource);
     }
 
 }

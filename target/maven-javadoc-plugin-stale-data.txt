@@ -1,0 +1,138 @@
+@options
+@packages
+@argfile
+-classpath
+'C:/Users/rnovos/.m2/repository/io/dropwizard/dropwizard-core/2.0.23/dropwizard-core-2.0.23.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/dropwizard-util/2.0.23/dropwizard-util-2.0.23.jar;C:/Users/rnovos/.m2/repository/com/google/guava/guava/30.1.1-jre/guava-30.1.1-jre.jar;C:/Users/rnovos/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar;C:/Users/rnovos/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:/Users/rnovos/.m2/repository/org/checkerframework/checker-qual/3.15.0/checker-qual-3.15.0.jar;C:/Users/rnovos/.m2/repository/com/google/errorprone/error_prone_annotations/2.7.1/error_prone_annotations-2.7.1.jar;C:/Users/rnovos/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/dropwizard-jackson/2.0.23/dropwizard-jackson-2.0.23.jar;C:/Users/rnovos/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.9.1/caffeine-2.9.1.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.5/jackson-core-2.10.5.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-guava/2.10.5/jackson-datatype-guava-2.10.5.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.10.5/jackson-datatype-jsr310-2.10.5.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.10.5/jackson-datatype-jdk8-2.10.5.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.10.5/jackson-module-parameter-names-2.10.5.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/jackson/module/jackson-module-afterburner/2.10.5/jackson-module-afterburner-2.10.5.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.10.5/jackson-datatype-joda-2.10.5.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/dropwizard-validation/2.0.23/dropwizard-validation-2.0.23.jar;C:/Users/rnovos/.m2/repository/org/glassfish/jakarta.el/3.0.3/jakarta.el-3.0.3.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/dropwizard-configuration/2.0.23/dropwizard-configuration-2.0.23.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.5/jackson-dataformat-yaml-2.10.5.jar;C:/Users/rnovos/.m2/repository/org/yaml/snakeyaml/1.26/snakeyaml-1.26.jar;C:/Users/rnovos/.m2/repository/org/apache/commons/commons-text/1.9/commons-text-1.9.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/dropwizard-logging/2.0.23/dropwizard-logging-2.0.23.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/metrics/metrics-logback/4.1.23/metrics-logback-4.1.23.jar;C:/Users/rnovos/.m2/repository/org/slf4j/jul-to-slf4j/1.7.31/jul-to-slf4j-1.7.31.jar;C:/Users/rnovos/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/logback/logback-throttling-appender/1.1.0/logback-throttling-appender-1.1.0.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/dropwizard-metrics/2.0.23/dropwizard-metrics-2.0.23.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/dropwizard-jersey/2.0.23/dropwizard-jersey-2.0.23.jar;C:/Users/rnovos/.m2/repository/org/glassfish/jersey/core/jersey-server/2.33/jersey-server-2.33.jar;C:/Users/rnovos/.m2/repository/org/javassist/javassist/3.28.0-GA/javassist-3.28.0-GA.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/metrics/metrics-jersey2/4.1.23/metrics-jersey2-4.1.23.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.10.5/jackson-jaxrs-json-provider-2.10.5.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.10.5/jackson-jaxrs-base-2.10.5.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.10.5/jackson-module-jaxb-annotations-2.10.5.jar;C:/Users/rnovos/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar;C:/Users/rnovos/.m2/repository/joda-time/joda-time/2.10.10/joda-time-2.10.10.jar;C:/Users/rnovos/.m2/repository/org/glassfish/hk2/hk2-api/2.6.1/hk2-api-2.6.1.jar;C:/Users/rnovos/.m2/repository/org/glassfish/hk2/hk2-utils/2.6.1/hk2-utils-2.6.1.jar;C:/Users/rnovos/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.6.1/aopalliance-repackaged-2.6.1.jar;C:/Users/rnovos/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet-core/2.33/jersey-container-servlet-core-2.33.jar;C:/Users/rnovos/.m2/repository/org/glassfish/jersey/core/jersey-client/2.33/jersey-client-2.33.jar;C:/Users/rnovos/.m2/repository/org/eclipse/jetty/jetty-io/9.4.42.v20210604/jetty-io-9.4.42.v20210604.jar;C:/Users/rnovos/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/dropwizard-servlets/2.0.23/dropwizard-servlets-2.0.23.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/metrics/metrics-annotation/4.1.23/metrics-annotation-4.1.23.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/dropwizard-jetty/2.0.23/dropwizard-jetty-2.0.23.jar;C:/Users/rnovos/.m2/repository/org/eclipse/jetty/jetty-servlets/9.4.42.v20210604/jetty-servlets-9.4.42.v20210604.jar;C:/Users/rnovos/.m2/repository/org/eclipse/jetty/jetty-continuation/9.4.42.v20210604/jetty-continuation-9.4.42.v20210604.jar;C:/Users/rnovos/.m2/repository/org/eclipse/jetty/jetty-http/9.4.42.v20210604/jetty-http-9.4.42.v20210604.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/dropwizard-lifecycle/2.0.23/dropwizard-lifecycle-2.0.23.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/metrics/metrics-core/4.1.23/metrics-core-4.1.23.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/metrics/metrics-jetty9/4.1.23/metrics-jetty9-4.1.23.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/metrics/metrics-jvm/4.1.23/metrics-jvm-4.1.23.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/metrics/metrics-jmx/4.1.23/metrics-jmx-4.1.23.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/metrics/metrics-servlets/4.1.23/metrics-servlets-4.1.23.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/metrics/metrics-json/4.1.23/metrics-json-4.1.23.jar;C:/Users/rnovos/.m2/repository/com/helger/profiler/1.1.1/profiler-1.1.1.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/metrics/metrics-healthchecks/4.1.23/metrics-healthchecks-4.1.23.jar;C:/Users/rnovos/.m2/repository/io/dropwizard/dropwizard-request-logging/2.0.23/dropwizard-request-logging-2.0.23.jar;C:/Users/rnovos/.m2/repository/ch/qos/logback/logback-access/1.2.3/logback-access-1.2.3.jar;C:/Users/rnovos/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.5.1/jackson-databind-2.10.5.1.jar;C:/Users/rnovos/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar;C:/Users/rnovos/.m2/repository/jakarta/servlet/jakarta.servlet-api/4.0.4/jakarta.servlet-api-4.0.4.jar;C:/Users/rnovos/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/2.1.6/jakarta.ws.rs-api-2.1.6.jar;C:/Users/rnovos/.m2/repository/net/sourceforge/argparse4j/argparse4j/0.8.1/argparse4j-0.8.1.jar;C:/Users/rnovos/.m2/repository/org/eclipse/jetty/jetty-security/9.4.42.v20210604/jetty-security-9.4.42.v20210604.jar;C:/Users/rnovos/.m2/repository/org/eclipse/jetty/jetty-server/9.4.42.v20210604/jetty-server-9.4.42.v20210604.jar;C:/Users/rnovos/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.42.v20210604/jetty-servlet-9.4.42.v20210604.jar;C:/Users/rnovos/.m2/repository/org/eclipse/jetty/jetty-util-ajax/9.4.42.v20210604/jetty-util-ajax-9.4.42.v20210604.jar;C:/Users/rnovos/.m2/repository/org/eclipse/jetty/jetty-util/9.4.42.v20210604/jetty-util-9.4.42.v20210604.jar;C:/Users/rnovos/.m2/repository/org/eclipse/jetty/toolchain/setuid/jetty-setuid-java/1.0.4/jetty-setuid-java-1.0.4.jar;C:/Users/rnovos/.m2/repository/org/glassfish/hk2/external/jakarta.inject/2.6.1/jakarta.inject-2.6.1.jar;C:/Users/rnovos/.m2/repository/org/glassfish/jersey/core/jersey-common/2.33/jersey-common-2.33.jar;C:/Users/rnovos/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.3/osgi-resource-locator-1.0.3.jar;C:/Users/rnovos/.m2/repository/org/glassfish/jersey/ext/jersey-bean-validation/2.33/jersey-bean-validation-2.33.jar;C:/Users/rnovos/.m2/repository/org/slf4j/slf4j-api/1.7.31/slf4j-api-1.7.31.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.5/jackson-annotations-2.10.5.jar;C:/Users/rnovos/.m2/repository/jakarta/validation/jakarta.validation-api/2.0.2/jakarta.validation-api-2.0.2.jar;C:/Users/rnovos/.m2/repository/org/hibernate/validator/hibernate-validator/6.1.7.Final/hibernate-validator-6.1.7.Final.jar;C:/Users/rnovos/.m2/repository/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final.jar;C:/Users/rnovos/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar;C:/Users/rnovos/.m2/repository/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java;C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2021. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'testProj 1.8 API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'testProj 1.8 API'
+testProj.api
+testProj.core
+testProj.health
+testProj.resources
+testProj
+'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/api/UserApi.java'
+'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/core/User.java'
+'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/health/TemplateHealthCheck.java'
+'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/resources/HelloUserResource.java'
+'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/testProjApplication.java'
+'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/testProjConfiguration.java'
+C:\Users\rnovos\.m2\repository\io\dropwizard\dropwizard-core\2.0.23\dropwizard-core-2.0.23.jar = 1633444946100
+C:\Users\rnovos\.m2\repository\io\dropwizard\dropwizard-util\2.0.23\dropwizard-util-2.0.23.jar = 1633444958661
+C:\Users\rnovos\.m2\repository\com\google\guava\guava\30.1.1-jre\guava-30.1.1-jre.jar = 1633444952570
+C:\Users\rnovos\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar = 1633444946200
+C:\Users\rnovos\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar = 1633444946200
+C:\Users\rnovos\.m2\repository\org\checkerframework\checker-qual\3.15.0\checker-qual-3.15.0.jar = 1633444946726
+C:\Users\rnovos\.m2\repository\com\google\errorprone\error_prone_annotations\2.7.1\error_prone_annotations-2.7.1.jar = 1633444946726
+C:\Users\rnovos\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar = 1633444946448
+C:\Users\rnovos\.m2\repository\io\dropwizard\dropwizard-jackson\2.0.23\dropwizard-jackson-2.0.23.jar = 1633444958529
+C:\Users\rnovos\.m2\repository\com\github\ben-manes\caffeine\caffeine\2.9.1\caffeine-2.9.1.jar = 1633444955439
+C:\Users\rnovos\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.5\jackson-core-2.10.5.jar = 1633444959911
+C:\Users\rnovos\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-guava\2.10.5\jackson-datatype-guava-2.10.5.jar = 1633444946973
+C:\Users\rnovos\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.10.5\jackson-datatype-jsr310-2.10.5.jar = 1633444947505
+C:\Users\rnovos\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.10.5\jackson-datatype-jdk8-2.10.5.jar = 1633444947643
+C:\Users\rnovos\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.10.5\jackson-module-parameter-names-2.10.5.jar = 1633444947791
+C:\Users\rnovos\.m2\repository\com\fasterxml\jackson\module\jackson-module-afterburner\2.10.5\jackson-module-afterburner-2.10.5.jar = 1633444948044
+C:\Users\rnovos\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-joda\2.10.5\jackson-datatype-joda-2.10.5.jar = 1633444948091
+C:\Users\rnovos\.m2\repository\io\dropwizard\dropwizard-validation\2.0.23\dropwizard-validation-2.0.23.jar = 1633444958692
+C:\Users\rnovos\.m2\repository\org\glassfish\jakarta.el\3.0.3\jakarta.el-3.0.3.jar = 1633444961285
+C:\Users\rnovos\.m2\repository\io\dropwizard\dropwizard-configuration\2.0.23\dropwizard-configuration-2.0.23.jar = 1633444948909
+C:\Users\rnovos\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.10.5\jackson-dataformat-yaml-2.10.5.jar = 1633444949109
+C:\Users\rnovos\.m2\repository\org\yaml\snakeyaml\1.26\snakeyaml-1.26.jar = 1633444949231
+C:\Users\rnovos\.m2\repository\org\apache\commons\commons-text\1.9\commons-text-1.9.jar = 1633444949447
+C:\Users\rnovos\.m2\repository\io\dropwizard\dropwizard-logging\2.0.23\dropwizard-logging-2.0.23.jar = 1633444958692
+C:\Users\rnovos\.m2\repository\io\dropwizard\metrics\metrics-logback\4.1.23\metrics-logback-4.1.23.jar = 1633444949710
+C:\Users\rnovos\.m2\repository\org\slf4j\jul-to-slf4j\1.7.31\jul-to-slf4j-1.7.31.jar = 1633444949911
+C:\Users\rnovos\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar = 1633444959616
+C:\Users\rnovos\.m2\repository\io\dropwizard\logback\logback-throttling-appender\1.1.0\logback-throttling-appender-1.1.0.jar = 1633444950350
+C:\Users\rnovos\.m2\repository\io\dropwizard\dropwizard-metrics\2.0.23\dropwizard-metrics-2.0.23.jar = 1633444950501
+C:\Users\rnovos\.m2\repository\io\dropwizard\dropwizard-jersey\2.0.23\dropwizard-jersey-2.0.23.jar = 1633444950951
+C:\Users\rnovos\.m2\repository\org\glassfish\jersey\core\jersey-server\2.33\jersey-server-2.33.jar = 1633444961167
+C:\Users\rnovos\.m2\repository\org\javassist\javassist\3.28.0-GA\javassist-3.28.0-GA.jar = 1633444952370
+C:\Users\rnovos\.m2\repository\io\dropwizard\metrics\metrics-jersey2\4.1.23\metrics-jersey2-4.1.23.jar = 1633444951915
+C:\Users\rnovos\.m2\repository\com\fasterxml\jackson\jaxrs\jackson-jaxrs-json-provider\2.10.5\jackson-jaxrs-json-provider-2.10.5.jar = 1633444952655
+C:\Users\rnovos\.m2\repository\com\fasterxml\jackson\jaxrs\jackson-jaxrs-base\2.10.5\jackson-jaxrs-base-2.10.5.jar = 1633444952739
+C:\Users\rnovos\.m2\repository\com\fasterxml\jackson\module\jackson-module-jaxb-annotations\2.10.5\jackson-module-jaxb-annotations-2.10.5.jar = 1633444952818
+C:\Users\rnovos\.m2\repository\jakarta\annotation\jakarta.annotation-api\1.3.5\jakarta.annotation-api-1.3.5.jar = 1633444960882
+C:\Users\rnovos\.m2\repository\joda-time\joda-time\2.10.10\joda-time-2.10.10.jar = 1633444953289
+C:\Users\rnovos\.m2\repository\org\glassfish\hk2\hk2-api\2.6.1\hk2-api-2.6.1.jar = 1633444953320
+C:\Users\rnovos\.m2\repository\org\glassfish\hk2\hk2-utils\2.6.1\hk2-utils-2.6.1.jar = 1633444953388
+C:\Users\rnovos\.m2\repository\org\glassfish\hk2\external\aopalliance-repackaged\2.6.1\aopalliance-repackaged-2.6.1.jar = 1633444953519
+C:\Users\rnovos\.m2\repository\org\glassfish\jersey\containers\jersey-container-servlet-core\2.33\jersey-container-servlet-core-2.33.jar = 1633444953757
+C:\Users\rnovos\.m2\repository\org\glassfish\jersey\core\jersey-client\2.33\jersey-client-2.33.jar = 1633444954020
+C:\Users\rnovos\.m2\repository\org\eclipse\jetty\jetty-io\9.4.42.v20210604\jetty-io-9.4.42.v20210604.jar = 1633444960396
+C:\Users\rnovos\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar = 1633444955408
+C:\Users\rnovos\.m2\repository\io\dropwizard\dropwizard-servlets\2.0.23\dropwizard-servlets-2.0.23.jar = 1633444955524
+C:\Users\rnovos\.m2\repository\io\dropwizard\metrics\metrics-annotation\4.1.23\metrics-annotation-4.1.23.jar = 1633444955562
+C:\Users\rnovos\.m2\repository\io\dropwizard\dropwizard-jetty\2.0.23\dropwizard-jetty-2.0.23.jar = 1633444955709
+C:\Users\rnovos\.m2\repository\org\eclipse\jetty\jetty-servlets\9.4.42.v20210604\jetty-servlets-9.4.42.v20210604.jar = 1633444956426
+C:\Users\rnovos\.m2\repository\org\eclipse\jetty\jetty-continuation\9.4.42.v20210604\jetty-continuation-9.4.42.v20210604.jar = 1633444956426
+C:\Users\rnovos\.m2\repository\org\eclipse\jetty\jetty-http\9.4.42.v20210604\jetty-http-9.4.42.v20210604.jar = 1633444960619
+C:\Users\rnovos\.m2\repository\io\dropwizard\dropwizard-lifecycle\2.0.23\dropwizard-lifecycle-2.0.23.jar = 1633444956800
+C:\Users\rnovos\.m2\repository\io\dropwizard\metrics\metrics-core\4.1.23\metrics-core-4.1.23.jar = 1633444958329
+C:\Users\rnovos\.m2\repository\io\dropwizard\metrics\metrics-jetty9\4.1.23\metrics-jetty9-4.1.23.jar = 1633444957311
+C:\Users\rnovos\.m2\repository\io\dropwizard\metrics\metrics-jvm\4.1.23\metrics-jvm-4.1.23.jar = 1633444958260
+C:\Users\rnovos\.m2\repository\io\dropwizard\metrics\metrics-jmx\4.1.23\metrics-jmx-4.1.23.jar = 1633444957759
+C:\Users\rnovos\.m2\repository\io\dropwizard\metrics\metrics-servlets\4.1.23\metrics-servlets-4.1.23.jar = 1633444957928
+C:\Users\rnovos\.m2\repository\io\dropwizard\metrics\metrics-json\4.1.23\metrics-json-4.1.23.jar = 1633444958028
+C:\Users\rnovos\.m2\repository\com\helger\profiler\1.1.1\profiler-1.1.1.jar = 1633444958206
+C:\Users\rnovos\.m2\repository\io\dropwizard\metrics\metrics-healthchecks\4.1.23\metrics-healthchecks-4.1.23.jar = 1633444958313
+C:\Users\rnovos\.m2\repository\io\dropwizard\dropwizard-request-logging\2.0.23\dropwizard-request-logging-2.0.23.jar = 1633444958492
+C:\Users\rnovos\.m2\repository\ch\qos\logback\logback-access\1.2.3\logback-access-1.2.3.jar = 1633444958777
+C:\Users\rnovos\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar = 1633444959312
+C:\Users\rnovos\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.5.1\jackson-databind-2.10.5.1.jar = 1633444960650
+C:\Users\rnovos\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar = 1633444959933
+C:\Users\rnovos\.m2\repository\jakarta\servlet\jakarta.servlet-api\4.0.4\jakarta.servlet-api-4.0.4.jar = 1633444959980
+C:\Users\rnovos\.m2\repository\jakarta\ws\rs\jakarta.ws.rs-api\2.1.6\jakarta.ws.rs-api-2.1.6.jar = 1633444961368
+C:\Users\rnovos\.m2\repository\net\sourceforge\argparse4j\argparse4j\0.8.1\argparse4j-0.8.1.jar = 1633444960118
+C:\Users\rnovos\.m2\repository\org\eclipse\jetty\jetty-security\9.4.42.v20210604\jetty-security-9.4.42.v20210604.jar = 1633444960519
+C:\Users\rnovos\.m2\repository\org\eclipse\jetty\jetty-server\9.4.42.v20210604\jetty-server-9.4.42.v20210604.jar = 1633444960296
+C:\Users\rnovos\.m2\repository\org\eclipse\jetty\jetty-servlet\9.4.42.v20210604\jetty-servlet-9.4.42.v20210604.jar = 1633444960534
+C:\Users\rnovos\.m2\repository\org\eclipse\jetty\jetty-util-ajax\9.4.42.v20210604\jetty-util-ajax-9.4.42.v20210604.jar = 1633444960635
+C:\Users\rnovos\.m2\repository\org\eclipse\jetty\jetty-util\9.4.42.v20210604\jetty-util-9.4.42.v20210604.jar = 1633444960681
+C:\Users\rnovos\.m2\repository\org\eclipse\jetty\toolchain\setuid\jetty-setuid-java\1.0.4\jetty-setuid-java-1.0.4.jar = 1633444960750
+C:\Users\rnovos\.m2\repository\org\glassfish\hk2\external\jakarta.inject\2.6.1\jakarta.inject-2.6.1.jar = 1633444961020
+C:\Users\rnovos\.m2\repository\org\glassfish\jersey\core\jersey-common\2.33\jersey-common-2.33.jar = 1633444962154
+C:\Users\rnovos\.m2\repository\org\glassfish\hk2\osgi-resource-locator\1.0.3\osgi-resource-locator-1.0.3.jar = 1633444960967
+C:\Users\rnovos\.m2\repository\org\glassfish\jersey\ext\jersey-bean-validation\2.33\jersey-bean-validation-2.33.jar = 1633444961013
+C:\Users\rnovos\.m2\repository\org\slf4j\slf4j-api\1.7.31\slf4j-api-1.7.31.jar = 1633444961468
+C:\Users\rnovos\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.5\jackson-annotations-2.10.5.jar = 1633444961599
+C:\Users\rnovos\.m2\repository\jakarta\validation\jakarta.validation-api\2.0.2\jakarta.validation-api-2.0.2.jar = 1633444962339
+C:\Users\rnovos\.m2\repository\org\hibernate\validator\hibernate-validator\6.1.7.Final\hibernate-validator-6.1.7.Final.jar = 1633444962169
+C:\Users\rnovos\.m2\repository\org\jboss\logging\jboss-logging\3.3.2.Final\jboss-logging-3.3.2.Final.jar = 1633444962370
+C:\Users\rnovos\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar = 1633444962370
+C:\Users\rnovos\.m2\repository\org\projectlombok\lombok\1.18.20\lombok-1.18.20.jar = 1633508272613
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\src\main\java = 1633444869732
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\generated-sources\annotations = 1633512897214
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\allclasses-frame.html = 1633512904774
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\allclasses-noframe.html = 1633512904774
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\constant-values.html = 1633512904696
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\deprecated-list.html = 1633512904774
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\help-doc.html = 1633512904794
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\index-all.html = 1633512904774
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\index.html = 1633512904774
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\overview-frame.html = 1633512904644
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\overview-summary.html = 1633512904791
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\overview-tree.html = 1633512904774
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\package-list = 1633512904644
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\script.js = 1633512904797
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\stylesheet.css = 1633512904796

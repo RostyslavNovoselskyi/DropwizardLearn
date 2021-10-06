@@ -1,0 +1,7 @@
+testProj\testProjApplication.class
+testProj\core\User$UserBuilder.class
+testProj\core\User.class
+testProj\health\TemplateHealthCheck.class
+testProj\testProjConfiguration.class
+testProj\api\UserApi.class
+testProj\resources\HelloUserResource.class
