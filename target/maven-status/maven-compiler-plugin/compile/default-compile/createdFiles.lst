@@ -1,8 +1,0 @@
-testProj\testProjApplication.class
-testProj\resources\UserResource.class
-testProj\core\UserService.class
-testProj\health\TemplateHealthCheck.class
-testProj\testProjConfiguration.class
-testProj\api\User$UserBuilder.class
-testProj\api\User.class
-testProj\api\UserApi.class
