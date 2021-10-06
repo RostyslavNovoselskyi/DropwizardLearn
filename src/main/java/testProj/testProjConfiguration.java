@@ -6,10 +6,8 @@ import javax.validation.constraints.NotEmpty;
 import java.util.UUID;
 
 public class testProjConfiguration extends Configuration {
-//    @NotEmpty
     private UUID userId;
 
-//    @NotEmpty
     private String defaultName;
 
     @JsonProperty
@@ -19,7 +17,7 @@ public class testProjConfiguration extends Configuration {
 
     @JsonProperty
     public void setUserId(UUID userId) {
-        this.userId = UUID.randomUUID();
+        this.userId = userId;
     }
 
     @JsonProperty

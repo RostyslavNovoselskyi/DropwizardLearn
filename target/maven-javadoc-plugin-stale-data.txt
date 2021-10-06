@@ -30,10 +30,11 @@ testProj.core
 testProj.health
 testProj.resources
 testProj
+'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/api/User.java'
 'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/api/UserApi.java'
-'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/core/User.java'
+'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/core/UserService.java'
 'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/health/TemplateHealthCheck.java'
-'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/resources/HelloUserResource.java'
+'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/resources/UserResource.java'
 'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/testProjApplication.java'
 'C:/Users/rnovos/Desktop/SoftServe/StudProjects/testProj/src/main/java/testProj/testProjConfiguration.java'
 C:\Users\rnovos\.m2\repository\io\dropwizard\dropwizard-core\2.0.23\dropwizard-core-2.0.23.jar = 1633444946100
@@ -122,17 +123,17 @@ C:\Users\rnovos\.m2\repository\org\jboss\logging\jboss-logging\3.3.2.Final\jboss
 C:\Users\rnovos\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar = 1633444962370
 C:\Users\rnovos\.m2\repository\org\projectlombok\lombok\1.18.20\lombok-1.18.20.jar = 1633508272613
 C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\src\main\java = 1633444869732
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\generated-sources\annotations = 1633512897214
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\allclasses-frame.html = 1633512904774
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\allclasses-noframe.html = 1633512904774
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\constant-values.html = 1633512904696
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\deprecated-list.html = 1633512904774
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\help-doc.html = 1633512904794
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\index-all.html = 1633512904774
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\index.html = 1633512904774
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\overview-frame.html = 1633512904644
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\overview-summary.html = 1633512904791
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\overview-tree.html = 1633512904774
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\package-list = 1633512904644
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\script.js = 1633512904797
-C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\stylesheet.css = 1633512904796
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\generated-sources\annotations = 1633522803129
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\allclasses-frame.html = 1633522810727
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\allclasses-noframe.html = 1633522810727
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\constant-values.html = 1633522810660
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\deprecated-list.html = 1633522810727
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\help-doc.html = 1633522810742
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\index-all.html = 1633522810727
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\index.html = 1633522810727
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\overview-frame.html = 1633522810617
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\overview-summary.html = 1633522810742
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\overview-tree.html = 1633522810711
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\package-list = 1633522810601
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\script.js = 1633522810742
+C:\Users\rnovos\Desktop\SoftServe\StudProjects\testProj\target\apidocs\stylesheet.css = 1633522810742

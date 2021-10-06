@@ -3,10 +3,9 @@ package testProj;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import testProj.core.UserService;
 import testProj.health.TemplateHealthCheck;
-import testProj.resources.HelloUserResource;
-
-import java.util.UUID;
+import testProj.resources.UserResource;
 
 public class testProjApplication extends Application<testProjConfiguration> {
 
@@ -27,9 +26,8 @@ public class testProjApplication extends Application<testProjConfiguration> {
     @Override
     public void run(final testProjConfiguration configuration,
                     final Environment environment) {
-        final HelloUserResource resource = new HelloUserResource(
-                configuration.getUserId(),
-                configuration.getDefaultName()
+        final UserResource resource = new UserResource(
+                new UserService()
         );
         final TemplateHealthCheck healthCheck =
                 new TemplateHealthCheck(
