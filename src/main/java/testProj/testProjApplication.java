@@ -3,12 +3,17 @@ package testProj;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import org.glassfish.hk2.utilities.binding.AbstractBinder;
+import testProj.api.UserApi;
+import testProj.configuration.testProjConfiguration;
 import testProj.core.UserService;
 import testProj.health.TemplateHealthCheck;
 import testProj.resources.UserResource;
+import zone.dragon.dropwizard.HK2Bundle;
+
+import javax.inject.Singleton;
 
 public class testProjApplication extends Application<testProjConfiguration> {
-    private final UserService userService = new UserService();
 
     public static void main(final String[] args) throws Exception {
         new testProjApplication().run(args);
@@ -21,19 +26,25 @@ public class testProjApplication extends Application<testProjConfiguration> {
 
     @Override
     public void initialize(final Bootstrap<testProjConfiguration> bootstrap) {
-        // TODO: application initialization
+        HK2Bundle.addTo(bootstrap);
     }
 
     @Override
     public void run(final testProjConfiguration configuration,
                     final Environment environment) {
-        final UserResource resource = new UserResource(
-                userService
-        );
+        environment
+            .jersey()
+            .register(
+                    new AbstractBinder() {
+                        @Override
+                        protected void configure() {
+                            bind(UserService.class).to(UserApi.class).in(Singleton.class);
+                        }
+                    }
+            );
+        environment.jersey().register(UserResource.class);
+
         final TemplateHealthCheck healthCheck = new TemplateHealthCheck();
-
         environment.healthChecks().register("template", healthCheck);
-        environment.jersey().register(resource);
     }
-
 }

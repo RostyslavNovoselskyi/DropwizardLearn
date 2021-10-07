@@ -1,8 +1,7 @@
 package testProj.resources;
 
-import lombok.AllArgsConstructor;
 import testProj.api.User;
-import testProj.core.UserService;
+import testProj.api.UserApi;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -13,15 +12,18 @@ import javax.ws.rs.core.MediaType;
 import java.util.Optional;
 import java.util.UUID;
 
-@AllArgsConstructor
 @Path("/user")
 @Produces(MediaType.APPLICATION_JSON)
 public class UserResource {
+    private final UserApi userApi;
+
     @Inject
-     UserService userService;
+    public UserResource(UserApi userApi) {
+        this.userApi = userApi;
+    }
 
     @GET
     public Optional<User> getUser(@QueryParam("id") UUID id){
-        return userService.getUser(id);
+        return userApi.getUser(id);
     }
 }
