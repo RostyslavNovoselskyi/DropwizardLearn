@@ -3,12 +3,12 @@ package testProj;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-import testProj.api.User;
 import testProj.core.UserService;
 import testProj.health.TemplateHealthCheck;
 import testProj.resources.UserResource;
 
 public class testProjApplication extends Application<testProjConfiguration> {
+    private final UserService userService = new UserService();
 
     public static void main(final String[] args) throws Exception {
         new testProjApplication().run(args);
@@ -28,7 +28,7 @@ public class testProjApplication extends Application<testProjConfiguration> {
     public void run(final testProjConfiguration configuration,
                     final Environment environment) {
         final UserResource resource = new UserResource(
-                new UserService()
+                userService
         );
         final TemplateHealthCheck healthCheck = new TemplateHealthCheck();
 

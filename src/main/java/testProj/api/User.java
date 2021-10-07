@@ -10,7 +10,7 @@ import java.util.UUID;
 @Builder(toBuilder = true)
 @Getter
 public class User {
-    private final UUID userId;
+    private final UUID id;
 
     private final String name;
 }

@@ -9,10 +9,10 @@ import java.util.UUID;
 public class UserService implements UserApi {
 
     @Override
-    public Optional<User> getUser() {
+    public Optional<User> getUser(UUID uuid) {
         return Optional.of(
                 User.builder()
-                        .userId(UUID.randomUUID())
+                        .id(uuid)
                         .name("John Doe")
                         .build()
         );
