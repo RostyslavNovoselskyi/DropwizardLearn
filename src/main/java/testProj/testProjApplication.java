@@ -3,6 +3,7 @@ package testProj;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import testProj.api.User;
 import testProj.core.UserService;
 import testProj.health.TemplateHealthCheck;
 import testProj.resources.UserResource;
@@ -29,11 +30,8 @@ public class testProjApplication extends Application<testProjConfiguration> {
         final UserResource resource = new UserResource(
                 new UserService()
         );
-        final TemplateHealthCheck healthCheck =
-                new TemplateHealthCheck(
-                        configuration.getUserId(),
-                        configuration.getDefaultName()
-                );
+        final TemplateHealthCheck healthCheck = new TemplateHealthCheck();
+
         environment.healthChecks().register("template", healthCheck);
         environment.jersey().register(resource);
     }
