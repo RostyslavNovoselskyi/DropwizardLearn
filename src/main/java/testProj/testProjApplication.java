@@ -3,6 +3,14 @@ package testProj;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import org.glassfish.hk2.utilities.binding.AbstractBinder;
+import testProj.api.UserApi;
+import testProj.core.UserService;
+import testProj.health.TemplateHealthCheck;
+import testProj.resources.UserResource;
+import zone.dragon.dropwizard.HK2Bundle;
+
+import javax.inject.Singleton;
 
 public class testProjApplication extends Application<testProjConfiguration> {
 
@@ -12,18 +20,30 @@ public class testProjApplication extends Application<testProjConfiguration> {
 
     @Override
     public String getName() {
-        return "testProj";
+        return "Hello-World";
     }
 
     @Override
     public void initialize(final Bootstrap<testProjConfiguration> bootstrap) {
-        // TODO: application initialization
+        HK2Bundle.addTo(bootstrap);
     }
 
     @Override
     public void run(final testProjConfiguration configuration,
                     final Environment environment) {
-        // TODO: implement application
-    }
+        environment
+            .jersey()
+            .register(
+                    new AbstractBinder() {
+                        @Override
+                        protected void configure() {
+                            bind(UserService.class).to(UserApi.class).in(Singleton.class);
+                        }
+                    }
+            );
+        environment.jersey().register(UserResource.class);
 
+        final TemplateHealthCheck healthCheck = new TemplateHealthCheck();
+        environment.healthChecks().register("ApiHealthCheck", healthCheck);
+    }
 }
