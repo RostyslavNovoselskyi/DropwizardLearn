@@ -1,13 +1,11 @@
 package testProj.resources;
 
+import feign.Param;
 import testProj.api.User;
 import testProj.api.UserApi;
 
 import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.Optional;
 import java.util.UUID;
