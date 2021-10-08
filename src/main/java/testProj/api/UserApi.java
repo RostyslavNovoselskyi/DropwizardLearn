@@ -9,5 +9,4 @@ import java.util.UUID;
 public interface UserApi {
     @RequestLine("GET /user?id={id}")
     Optional<User> getUser(@Param("id") UUID id);
-//    Optional<User> getUser(UUID id);
 }

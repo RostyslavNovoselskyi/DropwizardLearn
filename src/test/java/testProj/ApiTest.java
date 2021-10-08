@@ -31,10 +31,7 @@ public class ApiTest {
         UUID uuid = UUID.fromString("0d6948b9-a1d0-4c1c-83a2-d146a3b3848b");
         Optional<User> response = userApi.getUser(uuid);
 
-        if (response.isPresent()) {
-            Assert.assertEquals("John Doe", response.get().getName());
-            System.out.println(response.get().getName());
-        }
+        response.ifPresent(user -> Assert.assertEquals("John Doe", user.getName()));
     }
 
 }
