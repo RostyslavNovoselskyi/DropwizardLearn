@@ -1,0 +1,17 @@
+#template: Hello, %s!
+
+#defaultName: ${DEFAULT_NAME:-User}
+
+#server:
+#  applicationConnectors:
+#    - type: https
+#      port: 8080
+#    - type: http
+#      port: 8443
+#      keyStorePath: example.keystore
+#      keyStorePassword: example
+
+logging:
+  level: INFO
+  loggers:
+    testProj: DEBUG

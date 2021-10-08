@@ -1,4 +1,4 @@
-package testProj.configuration;
+package testProj;
 
 import io.dropwizard.Configuration;
 
