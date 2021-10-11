@@ -1,8 +1,8 @@
 package testProj.resources;
 
-import feign.Param;
 import testProj.api.User;
 import testProj.api.UserApi;
+import testProj.db.UserEntity;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -21,7 +21,14 @@ public class UserResource {
     }
 
     @GET
-    public Optional<User> getUser(@QueryParam("id") UUID id){
+    public Optional<UserEntity> getUser(@QueryParam("id") UUID id){
         return userApi.getUser(id);
     }
+
+    @POST
+    @Path("/create")
+    public void create(@QueryParam("id") UUID id){
+        userApi.createUser(id);
+    }
+
 }
