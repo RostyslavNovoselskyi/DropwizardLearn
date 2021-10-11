@@ -1,15 +1,12 @@
 package testProj.db;
 
 import io.dropwizard.hibernate.AbstractDAO;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import testProj.api.User;
 
 import javax.inject.Inject;
-import java.util.Optional;
 import java.util.UUID;
 
-public class UserDao extends AbstractDAO<User> {
+public class UserDao extends AbstractDAO<UserEntity> {
     private final SessionFactory sessionFactory;
 
     @Inject
@@ -18,17 +15,14 @@ public class UserDao extends AbstractDAO<User> {
         this.sessionFactory = sessionFactory;
     }
 
-    public Optional<UserEntity> getUser(UUID id) {
-        Session session = sessionFactory.getCurrentSession();
-        UserEntity user = (UserEntity) session.createQuery("FROM UserEntity u WHERE u.id=:id")
-                .setParameter("id", id);
+    public UserEntity getUser(UUID id) {
+        UserEntity userEntity = get(id);
 
-        return Optional.of(user);
+        return userEntity;
     }
 
-    public void createUser(User user) {
-        Session session = sessionFactory.getCurrentSession();
-        session.save(user);
+    public UserEntity createUser(UserEntity user) {
+        return persist(user);
     }
 
 }

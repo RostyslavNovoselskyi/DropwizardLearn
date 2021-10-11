@@ -7,7 +7,6 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.hibernate.SessionFactory;
-import testProj.api.User;
 import testProj.api.UserApi;
 import testProj.core.UserService;
 import testProj.db.UserDao;
@@ -45,25 +44,12 @@ public class testProjApplication extends Application<testProjConfiguration> {
                         @Override
                         protected void configure() {
                             bind(UserService.class).to(UserApi.class).in(Singleton.class);
-                            bind(UserDao.class).to(UserApi.class).in(Singleton.class);
+                            bindAsContract(UserDao.class).in(Singleton.class);
                             bind(hibernate.getSessionFactory()).to(SessionFactory.class);
                         }
                     }
             );
         environment.jersey().register(UserResource.class);
-
-//        final UserDao dao = new UserDao(hibernate.getSessionFactory());
-//        environment
-//                .jersey()
-//                .register(
-//                        new AbstractBinder() {
-//                            @Override
-//                            protected void configure() {
-//                                bind(UserDao.class).to(UserApi.class).in(Singleton.class);
-//                            }
-//                        }
-//                );
-//        environment.jersey().register(UserResource.class);
 
         final TemplateHealthCheck healthCheck = new TemplateHealthCheck();
         environment.healthChecks().register("ApiHealthCheck", healthCheck);

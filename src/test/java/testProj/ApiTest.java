@@ -29,9 +29,9 @@ public class ApiTest {
                 .target(UserApi.class, "http://localhost:8080");
 
         UUID uuid = UUID.fromString("0d6948b9-a1d0-4c1c-83a2-d146a3b3848b");
-//        Optional<User> response = userApi.getUser(uuid);
-//
-//        response.ifPresent(user -> Assert.assertEquals("John Doe", user.getName()));
+        Optional<User> response = userApi.getUser(uuid);
+
+        response.ifPresent(user -> Assert.assertEquals("John Doe", user.getName()));
     }
 
 }

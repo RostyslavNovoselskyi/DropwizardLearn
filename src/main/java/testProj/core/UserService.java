@@ -19,17 +19,21 @@ public class UserService  implements UserApi {
     }
 
     @Override
-    public Optional<UserEntity> getUser(UUID id){
-        return userDao.getUser(id);
+    public Optional<User> getUser(UUID id){
+        UserEntity user = userDao.getUser(id);
+
+        return Optional.of(User.builder()
+                .id(user.getId())
+                .name(user.getUserName())
+                .build());
     }
 
     @Override
-    public void createUser(UUID id) {
-        userDao.createUser(
-                User.builder()
-                        .id(id)
-                        .name("John Doe")
-                        .build()
-        );
+    public User createUser(User user) {
+        UserEntity userEntity = new UserEntity();
+        userEntity.setUserName(user.getName());
+        UserEntity userEntity1 = userDao.createUser(userEntity);
+
+        return User.builder().id(userEntity1.getId()).name(userEntity1.getUserName()).build();
     }
 }
