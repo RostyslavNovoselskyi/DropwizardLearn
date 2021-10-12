@@ -23,10 +23,6 @@ public class UserService  implements UserApi {
         UserEntity userEntity = userDao.getUser(id);
         User user = UserMapper.INSTANCE.entityToUser(userEntity);
         return Optional.of(user);
-//        return Optional.of(User.builder()
-//                .id(user.getId())
-//                .name(user.getUserName())
-//                .build());
     }
 
     @Override
@@ -37,6 +33,5 @@ public class UserService  implements UserApi {
 
         user = UserMapper.INSTANCE.entityToUser(userEntityNew);
         return user;
-//        return User.builder().id(userEntityNew.getId()).name(userEntityNew.getUserName()).build();
     }
 }
