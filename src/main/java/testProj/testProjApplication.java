@@ -7,9 +7,9 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.hibernate.SessionFactory;
+import org.mapstruct.factory.Mappers;
 import testProj.api.UserApi;
 import testProj.core.UserMapper;
-import testProj.core.UserMapperImpl;
 import testProj.core.UserService;
 import testProj.db.UserDao;
 import testProj.db.UserEntity;
@@ -47,7 +47,7 @@ public class testProjApplication extends Application<testProjConfiguration> {
                         protected void configure() {
                             bind(UserService.class).to(UserApi.class).in(Singleton.class);
                             bindAsContract(UserDao.class).in(Singleton.class);
-                            bind(UserMapperImpl.class).to(UserMapper.class).in(Singleton.class);
+                            bind(Mappers.getMapper(UserMapper.class)).to(UserMapper.class);
                             bind(hibernate.getSessionFactory()).to(SessionFactory.class);
                         }
                     }

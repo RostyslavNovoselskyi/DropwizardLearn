@@ -23,7 +23,7 @@ public class UserService  implements UserApi {
     @Override
     public Optional<User> getUser(UUID id){
         UserEntity userEntity = userDao.getUser(id);
-        User user = userMapper.INSTANCE.entityToUser(userEntity);
+        User user = userMapper.entityToUser(userEntity);
         return Optional.of(user);
     }
 
@@ -33,7 +33,7 @@ public class UserService  implements UserApi {
         userEntity.setUserName(user.getName());
         UserEntity userEntityNew = userDao.createUser(userEntity);
 
-        user = userMapper.INSTANCE.entityToUser(userEntityNew);
+        user = userMapper.entityToUser(userEntityNew);
         return user;
     }
 }

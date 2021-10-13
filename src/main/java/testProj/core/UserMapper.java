@@ -9,8 +9,9 @@ import testProj.db.UserEntity;
 @Mapper
 public interface UserMapper {
 
-    UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
-
     @Mapping(target = "name", source = "userName")
     User entityToUser(UserEntity userEntity);
+
+    @Mapping(target = "userName", source = "name")
+    UserEntity userToEntity(User user);
 }
