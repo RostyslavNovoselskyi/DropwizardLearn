@@ -12,16 +12,18 @@ import java.util.UUID;
 public class UserService  implements UserApi {
 
     private final UserDao userDao;
+    private final UserMapper userMapper;
 
     @Inject
-    public UserService(UserDao userDao) {
+    public UserService(UserDao userDao, UserMapper userMapper) {
         this.userDao = userDao;
+        this.userMapper = userMapper;
     }
 
     @Override
     public Optional<User> getUser(UUID id){
         UserEntity userEntity = userDao.getUser(id);
-        User user = UserMapper.INSTANCE.entityToUser(userEntity);
+        User user = userMapper.INSTANCE.entityToUser(userEntity);
         return Optional.of(user);
     }
 
@@ -31,7 +33,7 @@ public class UserService  implements UserApi {
         userEntity.setUserName(user.getName());
         UserEntity userEntityNew = userDao.createUser(userEntity);
 
-        user = UserMapper.INSTANCE.entityToUser(userEntityNew);
+        user = userMapper.INSTANCE.entityToUser(userEntityNew);
         return user;
     }
 }
