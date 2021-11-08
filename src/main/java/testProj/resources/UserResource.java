@@ -1,6 +1,6 @@
 package testProj.resources;
 
-import feign.Param;
+import io.dropwizard.hibernate.UnitOfWork;
 import testProj.api.User;
 import testProj.api.UserApi;
 
@@ -21,7 +21,16 @@ public class UserResource {
     }
 
     @GET
+    @UnitOfWork
     public Optional<User> getUser(@QueryParam("id") UUID id){
         return userApi.getUser(id);
     }
+
+    @POST
+    @Path("/create")
+    @UnitOfWork
+    public User create(User user){
+        return userApi.createUser(user);
+    }
+
 }
