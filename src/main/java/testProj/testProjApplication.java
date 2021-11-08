@@ -8,18 +8,24 @@ import io.dropwizard.setup.Environment;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.hibernate.SessionFactory;
 import org.mapstruct.factory.Mappers;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import testProj.api.UserApi;
+import testProj.core.KafkaProducerService;
 import testProj.core.UserMapper;
 import testProj.core.UserService;
 import testProj.db.UserDao;
 import testProj.db.UserEntity;
 import testProj.health.TemplateHealthCheck;
+import testProj.resources.KafkaProducerResource;
 import testProj.resources.UserResource;
 import zone.dragon.dropwizard.HK2Bundle;
 
 import javax.inject.Singleton;
 
 public class testProjApplication extends Application<testProjConfiguration> {
+
+    private static final Logger logger = LoggerFactory.getLogger(testProjApplication.class);
 
     public static void main(final String[] args) throws Exception {
         new testProjApplication().run(args);
@@ -53,6 +59,13 @@ public class testProjApplication extends Application<testProjConfiguration> {
                     }
             );
         environment.jersey().register(UserResource.class);
+
+        KafkaProducerService kafkaProducerService = new KafkaProducerService();
+        logger.info("Registering RESTful API resources");
+//        environment.jersey().register(new PingResource());
+        environment.jersey().register(new KafkaProducerResource());
+        environment.healthChecks().register("DropwizardKafkaProducerHealthCheck",
+                new TemplateHealthCheck());
 
         final TemplateHealthCheck healthCheck = new TemplateHealthCheck();
         environment.healthChecks().register("ApiHealthCheck", healthCheck);
