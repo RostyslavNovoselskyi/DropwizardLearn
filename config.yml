@@ -15,6 +15,6 @@ logging:
     testProj: DEBUG
 
 awsConfig:
-  key: AKIAQ5REGXAAQU5AFYBF
-  secret: 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
+  key:
+  secret:
   region: us-east-2
