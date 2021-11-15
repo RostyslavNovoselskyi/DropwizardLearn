@@ -1,5 +1,10 @@
 package testProj;
 
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.hibernate.HibernateBundle;
@@ -15,7 +20,9 @@ import testProj.core.KafkaProducerService;
 import testProj.core.UserMapper;
 import testProj.core.UserService;
 import testProj.db.UserDao;
+import testProj.db.UserDynamoDao;
 import testProj.db.UserEntity;
+import testProj.db.UserEntityDao;
 import testProj.health.TemplateHealthCheck;
 import testProj.resources.KafkaProducerResource;
 import testProj.resources.UserResource;
@@ -45,24 +52,36 @@ public class testProjApplication extends Application<testProjConfiguration> {
     @Override
     public void run(final testProjConfiguration configuration,
                     final Environment environment) {
+
+        final AmazonDynamoDB amazonDynamoDB = AmazonDynamoDBClientBuilder.standard()
+                .withCredentials(new AWSStaticCredentialsProvider(
+                        new BasicAWSCredentials(
+                                configuration.getAwsConfig().getKey(),
+                                configuration.getAwsConfig().getSecret())
+                ))
+                .withRegion(configuration.getAwsConfig().getRegion())
+                .build();
+
+        DynamoDBMapper mapper = new DynamoDBMapper(amazonDynamoDB);
+
         environment
-            .jersey()
-            .register(
-                    new AbstractBinder() {
-                        @Override
-                        protected void configure() {
-                            bind(UserService.class).to(UserApi.class).in(Singleton.class);
-                            bindAsContract(UserDao.class).in(Singleton.class);
-                            bind(Mappers.getMapper(UserMapper.class)).to(UserMapper.class);
-                            bind(hibernate.getSessionFactory()).to(SessionFactory.class);
+                .jersey()
+                .register(
+                        new AbstractBinder() {
+                            @Override
+                            protected void configure() {
+                                bind(UserService.class).to(UserApi.class).in(Singleton.class);
+                                bind(mapper).to(DynamoDBMapper.class);
+                                bindAsContract(UserDynamoDao.class).in(Singleton.class);
+                                bindAsContract(UserEntityDao.class).in(Singleton.class);
+                                bind(Mappers.getMapper(UserMapper.class)).to(UserMapper.class);
+                                bind(hibernate.getSessionFactory()).to(SessionFactory.class);
+                            }
                         }
-                    }
-            );
+                );
         environment.jersey().register(UserResource.class);
 
-        KafkaProducerService kafkaProducerService = new KafkaProducerService();
         logger.info("Registering RESTful API resources");
-//        environment.jersey().register(new PingResource());
         environment.jersey().register(new KafkaProducerResource());
         environment.healthChecks().register("DropwizardKafkaProducerHealthCheck",
                 new TemplateHealthCheck());

@@ -1,5 +1,6 @@
 package testProj.resources;
 
+import feign.Param;
 import io.dropwizard.hibernate.UnitOfWork;
 import testProj.api.User;
 import testProj.api.UserApi;
@@ -29,7 +30,7 @@ public class UserResource {
     @POST
     @Path("/create")
     @UnitOfWork
-    public User create(User user){
+    public User create(User user) {
         return userApi.createUser(user);
     }
 

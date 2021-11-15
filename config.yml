@@ -13,3 +13,8 @@ logging:
   level: INFO
   loggers:
     testProj: DEBUG
+
+awsConfig:
+  key: AKIAQ5REGXAAQU5AFYBF
+  secret: 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
+  region: us-east-2

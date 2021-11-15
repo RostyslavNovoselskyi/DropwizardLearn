@@ -12,4 +12,7 @@ public class testProjConfiguration extends Configuration {
     @Valid
     @NotNull
     private DataSourceFactory database = new DataSourceFactory();
+
+    private AwsConfig awsConfig;
 }
+

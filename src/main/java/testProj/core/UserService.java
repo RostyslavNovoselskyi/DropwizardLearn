@@ -2,38 +2,38 @@ package testProj.core;
 
 import testProj.api.User;
 import testProj.api.UserApi;
-import testProj.db.UserDao;
-import testProj.db.UserEntity;
+import testProj.db.UserDynamoEntity;
+import testProj.db.UserDynamoDao;
 
 import javax.inject.Inject;
 import java.util.Optional;
 import java.util.UUID;
 
-public class UserService  implements UserApi {
+public class UserService implements UserApi {
 
-    private final UserDao userDao;
+    private final UserDynamoDao userDao;
     private final UserMapper userMapper;
 
     @Inject
-    public UserService(UserDao userDao, UserMapper userMapper) {
+    public UserService(UserDynamoDao userDao, UserMapper userMapper) {
         this.userDao = userDao;
         this.userMapper = userMapper;
     }
 
     @Override
-    public Optional<User> getUser(UUID id){
-        UserEntity userEntity = userDao.getUser(id);
-        User user = userMapper.entityToUser(userEntity);
+    public Optional<User> getUser(UUID id) {
+        UserDynamoEntity userEntity = userDao.getUser(id);
+        User user = userMapper.dynamoToUser(userEntity);
         return Optional.of(user);
     }
 
     @Override
     public User createUser(User user) {
-        UserEntity userEntity = new UserEntity();
-        userEntity.setUserName(user.getName());
-        UserEntity userEntityNew = userDao.createUser(userEntity);
+        UserDynamoEntity userDynamoEntity = new UserDynamoEntity();
+        userDynamoEntity.setId(user.getId().toString());
+        userDynamoEntity.setUserName(user.getName());
+        userDao.createUser(userDynamoEntity);
 
-        user = userMapper.entityToUser(userEntityNew);
-        return user;
+        return userMapper.dynamoToUser(userDynamoEntity);
     }
 }

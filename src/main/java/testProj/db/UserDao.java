@@ -1,28 +1,12 @@
 package testProj.db;
 
-import io.dropwizard.hibernate.AbstractDAO;
-import org.hibernate.SessionFactory;
+import testProj.api.User;
 
-import javax.inject.Inject;
 import java.util.UUID;
 
-public class UserDao extends AbstractDAO<UserEntity> {
-    private final SessionFactory sessionFactory;
+public interface UserDao<T> {
 
-    @Inject
-    public UserDao(SessionFactory sessionFactory) {
-        super(sessionFactory);
-        this.sessionFactory = sessionFactory;
-    }
+    public T getUser(UUID uuid);
 
-    public UserEntity getUser(UUID id) {
-        UserEntity userEntity = get(id);
-
-        return userEntity;
-    }
-
-    public UserEntity createUser(UserEntity user) {
-        return persist(user);
-    }
-
+    public T createUser(T t);
 }
