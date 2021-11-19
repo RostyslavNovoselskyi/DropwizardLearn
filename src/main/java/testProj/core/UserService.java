@@ -30,7 +30,7 @@ public class UserService implements UserApi {
     @Override
     public User createUser(User user) {
         UserDynamoEntity userDynamoEntity = new UserDynamoEntity();
-        userDynamoEntity.setId(user.getId().toString());
+        userDynamoEntity.setUserId(user.getId().toString());
         userDynamoEntity.setUserName(user.getName());
         userDao.createUser(userDynamoEntity);
 
